@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register a Customer</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="/css/register.css">
+    <script src="/js/register.js"></script>
+</head>
+<body>
+
+
+    <form action="/register" method="POST" enctype="application/json">
+        <h4 style="text-align: center; color:#17A2B8;" class="p-4">Customer Registration Form</h4>
+        <div class="row">
+            <div class="col-md-6">
+                    <p class="label-txt">FIRST NAME</p>
+                    <input type="text" id="firstName" name="firstName" class="input" required>
+                    <div class="line-box">
+                        <div class="line"></div>
+                    </div>
+            </div>
+            <div class="col-md-6">
+                    <p class="label-txt">LAST NAME</p>
+                    <input type="text" id="lastName" name="lastName" class="input">
+                    <div class="line-box">
+                        <div class="line"></div>
+                    </div>
+            </div>
+        </div>
+        <label>
+            <p class="label-txt">CONTACT NUMBER</p>
+            <input type="text" id="contactNo" name="contactNo" class="input" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+
+        <label>
+            <p class="label-txt">ADDRESS</p>
+            <input type="text" name="address" id="address" value=""class="input" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label>
+            <p class="label-txt">EMAIL</p>
+            <input type="email" name="email" id="email" value=""class="input" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label>
+            <p class="label-txt">PASSWORD</p>
+            <input type="password" name="password" id="password" value=""class="input" minlength="8" required>
+            <div class="line-box">
+                <div class="line"></div>
+            </div>
+        </label>
+        <label>
+            <p class="label-txt">CUSTOMER TYPE</p>
+            <div class="customer-type">
+                <input type="radio" id="borrower" name="customerType" value="BORROWER" required> &nbsp;As a Borrower &nbsp;&nbsp;
+                <input type="radio" id="lender" name="customerType" value="LENDER" required>&nbsp;As a Lender
+                </div>
+        </label>      
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

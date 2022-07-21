@@ -1,0 +1,84 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<link rel="stylesheet" href="/css/installment.css">
+<title>Pay Installment</title>
+<body class="bg-dark">
+
+    <body class="hm-gradient">
+
+        <main>
+
+            <!--MDB Forms-->
+            <div class="container mt-4">
+
+                <div class="text-center darken-grey-text mb-4">
+                    
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+
+                    </div>
+                    
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Form register -->
+                                <form action="/installment" method="POST">
+                                    <h4 class="text-center pink-text font-bold py-4"><strong>Pay EMI</strong></h3>
+                                    <div class="md-form">
+                                        <i class="fa fa-user prefix grey-text"></i>
+                                        <input type="text" id="name" name="name" value="<%=data.name%>" class="form-control" readonly>
+                                        <label for="orangeForm-name37">Customer Name</label>
+                                    </div>
+                                    <input type="hidden" id="loanId" name="loanId" value="<%=data._id%>">
+                                    <input type="hidden" id="userId" name="userId" value="<%=data.userId%>">
+                                    <div class="md-form">
+                                        <i class="fa fa-money prefix grey-text"></i>
+                                        <input type="text" id="amount" name="amount" value="<%=data.installment%>" class="form-control" readonly>
+                                        <label for="orangeForm-email37">Amount</label>
+                                    </div>
+                                    <div class="md-form">
+                                        <i class="fa fa-calendar prefix grey-text"></i>
+                                        <input type="date" id="date" name="date" class="form-control" required>
+                                        <!-- <label for="orangeForm-email37">Date</label> -->
+                                    </div>
+                                    <div class="text-center py-4">
+                                        <button class="btn btn-outline-pink">Pay <i
+                                                class="fa fa-paper-plane-o ml-1"></i></button>
+                                    </div>
+                                </form>
+                                <!-- Form register -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                    
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+
+                <hr class="my-4">
+
+            </div>
+            <!--MDB Forms-->
+
+        </main>
+
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/js/mdb.min.js"></script>
+
+    </body>
+    <script>
+         var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+
+            today = yyyy + '-' + mm + '-' + dd;
+            document.getElementById("date").defaultValue = today;
+        </script>

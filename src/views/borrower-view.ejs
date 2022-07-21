@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/97c02f89cd.js"></script>
+
+        <link rel="stylesheet" href="/css/borrower-view.css">
+        <link rel="stylesheet" href="/css/header.css">
+
+</head>
+<body class="bg-dark text-white"> 
+    <div class="text-center">
+        <h5 class="card-title" style="line-height: 5rem;">Loan Management System</h5>
+    
+</div>
+        <a href="/apply-loan" class="btn btn-primary loan-btn">Apply for Loan</a>
+    
+    <div class="container mt-3">
+        <!-- <a href="/apply-loan" class="btn btn-success">Apply for Loan/a> -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact</th>
+                    <!-- <th scope="col">Address</th> -->
+                    <th scope="col">Loan Amount</th>
+                    <th scope="col">Tenure</th>
+                    <th scope="col">Interest Rate</th>
+                    <th scope="col">EMI /month</th>
+                    <th scope="col">Loan Type</th>
+                    <th scope="col">Total Amount</th>
+                    <th scope="col">Remaining Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(data.length > 0) { %>
+                
+                        <% data.forEach(function (user) { %>
+                 <tr>
+                     
+                    <td><%= user.name %></td>
+                    <td><%= user.contact %></td>
+                    <td><%= user.amount %></td>
+                    <td><%= user.tenure %></td>
+                    <td><%= user.interest %></td>
+                    <td><%= user.installment %></td>
+                    <td><%= user.type %></td>
+                    <td><%= user.totalAmount %></td>
+                    <td><%= user.remainingAmount %></td>
+                    <td>
+                        <a href="/pay-installment/<%=user._id%>"></i><abbr title="Pay EMI"><i class="far fa-id-card fa-2x"></i></abbr></a>
+                        <a href="/loan-info/<%=user._id%>"><abbr title="Loan Info"><i class=" text-success fas fa-info fa-2x"></i></abbr></a>
+         
+                    </td>
+        
+                    <% }) %>
+        
+                </tr>
+                <% } else { %>
+                    <tr><td colspan="8">No Data Found</td></tr>
+                <% } %>
+        
+            </tbody>
+        </table>      
+</body>
+</html>
